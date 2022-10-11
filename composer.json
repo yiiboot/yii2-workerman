@@ -1,0 +1,55 @@
+{
+    "name": "wellkit/yii2-stack-workerman",
+    "description": "yii2 workerman",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "niqingyang",
+            "email": "niqy@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "stack\\workerman\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "yiisoft/yii2": "^2.0",
+        "workerman/workerman": "^4.1",
+        "workerman/psr7": "^1.4",
+        "charlesportwoodii/yii2-psr7-bridge": "dev-master",
+        "league/mime-type-detection": "^1.11",
+        "symfony/filesystem": "^6.1"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-gii": "~2.2.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "phpunit/phpunit": "~9.5.0",
+        "codeception/codeception": "^5.0.0 || ^4.0",
+        "codeception/lib-innerbrowser": "^3.0 || ^1.1",
+        "codeception/module-asserts": "^3.0 || ^1.1",
+        "codeception/module-yii2": "^1.1",
+        "codeception/module-filesystem": "^3.0 || ^1.1",
+        "codeception/verify": "^2.2",
+        "symfony/browser-kit": "^6.0 || >=2.7 <=4.2.4"
+    },
+    "config": {
+        "allow-plugins": {
+            "yiisoft/yii2-composer" : true
+        },
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
