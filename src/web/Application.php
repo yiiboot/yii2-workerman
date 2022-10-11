@@ -3,6 +3,7 @@
 namespace stack\workerman\web;
 
 use ReflectionMethod;
+use stack\events\CreateControllerEvent;
 
 /**
  * the psr7 web application
@@ -22,5 +23,17 @@ class Application extends \yii\Psr7\web\Application
         $method = new ReflectionMethod(\yii\base\Application::class, 'bootstrap');
         // $method->setAccessible(true);
         $method->invoke($this);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function createController($route)
+    {
+        $event = new CreateControllerEvent($route);
+
+        $this->trigger(CreateControllerEvent::EVENT_NAME, $event);
+
+        return $event->controller ?: parent::createController($route);
     }
 }
