@@ -6,6 +6,7 @@ use stack\workerman\web\Application;
 use stack\workerman\web\RequestHandler;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
+use yii\Psr7\web\monitor\AbstractMonitor;
 
 /**
  * 应用进程
@@ -15,6 +16,14 @@ use yii\helpers\ArrayHelper;
  */
 class WebProcess extends Process
 {
+
+    /**
+     * 应用程序类型
+     *
+     * @var string
+     */
+    public string $applicationClass = Application::class;
+
     /**
      * 初始化应用的配置
      *
@@ -23,11 +32,11 @@ class WebProcess extends Process
     public array $config = [];
 
     /**
-     * 应用程序类型
+     * AbstractMonitor[]
      *
-     * @var string
+     * @var array
      */
-    public string $applicationClass = Application::class;
+    public array $monitors = [];
 
     /**
      * @throws InvalidConfigException
@@ -39,6 +48,20 @@ class WebProcess extends Process
         if ($this->handler == null) {
 
             $config = $this->getAppConfig();
+
+            if (!empty($this->monitors)) {
+                $config['monitors'] = [];
+                foreach ($this->monitors as $monitor) {
+                    if (!is_object($monitor)) {
+                        $monitor = \Yii::createObject($monitor);
+                    }
+                    if ($monitor instanceof AbstractMonitor) {
+                        $config['monitors'][] = $monitor;
+                    } else {
+                        throw new InvalidConfigException('monitor must instanceof ' . AbstractMonitor::class);
+                    }
+                }
+            }
 
             // 实例化应用
             $application = \Yii::createObject([
@@ -54,7 +77,7 @@ class WebProcess extends Process
                 }
                 $this->handler = new RequestHandler($application);
             } else {
-                throw new InvalidConfigException('process error: applicationClass instanceof ' . Application::class);
+                throw new InvalidConfigException('process error: applicationClass must instanceof ' . Application::class);
             }
         }
 

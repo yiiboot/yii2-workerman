@@ -1,7 +1,7 @@
 {
     "name": "wellkit/yii2-stack-workerman",
     "description": "yii2 workerman",
-    "type": "library",
+    "type": "yii2-extension",
     "license": "MIT",
     "minimum-stability": "stable",
     "authors": [
@@ -52,5 +52,8 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "extra": {
+        "bootstrap": "stack\\workerman\\WorkermanBootstrap"
+    }
 }

@@ -10,12 +10,12 @@ use yii\base\BootstrapInterface;
 use yii\console\Application;
 
 /**
- * Workerman Web Server Plugin
+ * Workerman Web Server Yii2 Extensions
  *
  * @author niqingyang<niqy@qq.com>
  * @date 2022/10/6 16:07
  */
-class WorkermanPlugin implements BootstrapInterface
+class WorkermanBootstrap implements BootstrapInterface
 {
     /**
      * Debug 模块名称

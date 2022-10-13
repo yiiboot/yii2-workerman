@@ -44,6 +44,9 @@ class RequestHandler
                 'Last-Modified' => gmdate('D, d M Y H:i:s', filemtime($checkFile)) . ' GMT',
             ], $code);
             $connection->send(response_to_string($psrResponse), true);
+            unset($code);
+            unset($checkFile);
+            unset($psrResponse);
             return;
         }
 
