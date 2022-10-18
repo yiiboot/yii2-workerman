@@ -29,26 +29,6 @@ class Application extends \yii\Psr7\web\Application
     }
 
     /**
-     * {@inheritDoc}
-     */
-    public function preInit(&$config)
-    {
-        if ($this->preInited) {
-            $coreComponents = array_keys($this->coreComponents());
-
-            foreach ($config['components'] as $name => $component) {
-                if (!in_array($name, $coreComponents)) {
-                    unset($config['components'][$name]);
-                }
-            }
-        }
-
-        parent::preInit($config);
-
-        $this->preInited = true;
-    }
-
-    /**
      * {@inheritdoc}
      * @throws \ReflectionException
      */
@@ -70,26 +50,6 @@ class Application extends \yii\Psr7\web\Application
             return $monitors;
         }
         return [...$monitors, ...$this->monitors];
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function terminate(ResponseInterface $response): ResponseInterface
-    {
-        $response = parent::terminate($response);
-
-        $this->module = null;
-        $this->controller = null;
-        $this->requestedRoute = null;
-
-        $coreComponentNames = array_keys($this->coreComponents());
-
-        foreach ($coreComponentNames as $id) {
-            $this->clear($id);
-        }
-
-        return $response;
     }
 
     /**
