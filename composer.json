@@ -1,5 +1,5 @@
 {
-    "name": "wellkit/yii2-stack-workerman",
+    "name": "wellkit/yii2-workerman",
     "description": "yii2 workerman",
     "type": "yii2-extension",
     "license": "MIT",
