@@ -1,6 +1,6 @@
 <?php
 
-namespace stack\workerman\web;
+namespace yiiboot\workerman\web;
 
 use League\MimeTypeDetection\FinfoMimeTypeDetector;
 use Workerman\Connection\TcpConnection;

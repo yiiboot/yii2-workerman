@@ -1,6 +1,6 @@
 <?php
 
-namespace stack\workerman\debug\panels;
+namespace yiiboot\workerman\debug\panels;
 
 use Yii;
 use yii\log\Logger;

@@ -1,9 +1,9 @@
 <?php
 
-namespace stack\workerman;
+namespace yiiboot\workerman;
 
-use stack\workerman\web\Application;
-use stack\workerman\web\RequestHandler;
+use yiiboot\workerman\web\Application;
+use yiiboot\workerman\web\RequestHandler;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\Psr7\web\monitor\AbstractMonitor;
@@ -105,7 +105,7 @@ class WebProcess extends Process
                     ]
                 ],
                 'response' => [
-                    'class' => \stack\workerman\web\Response::class,
+                    'class' => \yiiboot\workerman\web\Response::class,
                 ],
                 'errorHandler' => [
                     'class' => \yii\Psr7\web\ErrorHandler::class,

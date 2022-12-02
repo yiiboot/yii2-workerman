@@ -1,10 +1,10 @@
 <?php
 
-namespace stack\workerman\web;
+namespace yiiboot\workerman\web;
 
 use Psr\Http\Message\ResponseInterface;
 use ReflectionMethod;
-use stack\events\CreateControllerEvent;
+use wellkit\events\CreateControllerEvent;
 
 /**
  * the psr7 web application

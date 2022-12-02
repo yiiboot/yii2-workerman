@@ -1,7 +1,7 @@
 <?php
 
 
-namespace stack\workerman\debug\log;
+namespace yiiboot\workerman\debug\log;
 
 /**
  * 日志记录器 - 替换 YII_BEGIN_TIME

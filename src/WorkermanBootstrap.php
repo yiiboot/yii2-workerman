@@ -1,10 +1,10 @@
 <?php
 
-namespace stack\workerman;
+namespace yiiboot\workerman;
 
-use stack\workerman\commands\WorkermanController;
-use stack\workerman\debug\log\Logger;
-use stack\workerman\debug\Module;
+use yiiboot\workerman\commands\WorkermanController;
+use yiiboot\workerman\debug\log\Logger;
+use yiiboot\workerman\debug\Module;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\console\Application;

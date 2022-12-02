@@ -1,5 +1,5 @@
 {
-    "name": "wellkit/yii2-workerman",
+    "name": "yiiboot/yii2-workerman",
     "description": "yii2 workerman",
     "type": "yii2-extension",
     "license": "MIT",
@@ -12,7 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "stack\\workerman\\": "src/"
+            "yiiboot\\workerman\\": "src/"
         }
     },
     "require": {

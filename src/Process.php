@@ -1,6 +1,6 @@
 <?php
 
-namespace stack\workerman;
+namespace yiiboot\workerman;
 
 use Workerman\Worker;
 use Yii;

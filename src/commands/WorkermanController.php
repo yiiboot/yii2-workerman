@@ -1,10 +1,10 @@
 <?php
 
-namespace stack\workerman\commands;
+namespace yiiboot\workerman\commands;
 
-use stack\workerman\WebProcess;
-use stack\workerman\Process;
-use stack\workerman\ProcessInterface;
+use yiiboot\workerman\WebProcess;
+use yiiboot\workerman\Process;
+use yiiboot\workerman\ProcessInterface;
 use Workerman\Connection\TcpConnection;
 use Workerman\Worker;
 use Yii;

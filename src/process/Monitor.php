@@ -14,7 +14,7 @@
  */
 
 
-namespace stack\workerman\process;
+namespace yiiboot\workerman\process;
 
 use Symfony\Component\Filesystem\Path;
 use Symfony\Component\Finder\Finder;

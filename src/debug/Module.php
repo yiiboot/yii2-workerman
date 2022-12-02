@@ -1,9 +1,9 @@
 <?php
 
-namespace stack\workerman\debug;
+namespace yiiboot\workerman\debug;
 
-use stack\workerman\debug\panels\ProfilingPanel;
-use stack\workerman\debug\panels\TimelinePanel;
+use yiiboot\workerman\debug\panels\ProfilingPanel;
+use yiiboot\workerman\debug\panels\TimelinePanel;
 use yii\helpers\Url;
 
 /**
