@@ -3,7 +3,7 @@
     "description": "yii2 workerman",
     "type": "yii2-extension",
     "license": "MIT",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "niqingyang",
