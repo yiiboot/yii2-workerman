@@ -54,8 +54,5 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ],
-    "extra": {
-        "bootstrap": "stack\\workerman\\WorkermanBootstrap"
-    }
+    ]
 }
