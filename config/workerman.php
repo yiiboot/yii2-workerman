@@ -20,7 +20,7 @@ return [
         'process' => [
             [
                 'name' => 'Yii2 Workerman Server',
-                'class' => \stack\workerman\WebProcess::class,
+                'class' => \yiiboot\workerman\WebProcess::class,
                 'listen' => 'http://0.0.0.0:8080',
                 'config' => [
                     // the application config
@@ -28,7 +28,7 @@ return [
             ],
             [
                 'handler' => [
-                    'class' => \stack\workerman\process\Monitor::class,
+                    'class' => \yiiboot\workerman\process\Monitor::class,
                     '__construct()' => [
                         // the monitor dirs
                         'resource' => ['@project'],
